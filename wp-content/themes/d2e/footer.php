@@ -1,13 +1,15 @@
+ <?php  global $d2e_theme; ?>
  <!-- FOOTER -->   
       <footer>
          <div class="line">
             <div class="s-12 l-6">
-               <p>Copyright 2015, Vision Design - graphic zoo
+               <p>
+                <?php echo $d2e_theme->get_options('footer_left'); ?>
                </p>
             </div>
             <div class="s-12 l-6">
                <p class="right">
-                  <a class="right" href="http://www.myresponsee.com" title="Responsee - lightweight responsive framework">Design and coding by Responsee Team</a>
+                  <a class="right" href="http://www.myresponsee.com" title="Responsee - lightweight responsive framework"><?php echo $d2e_theme->get_options('footer_right'); ?></a>
                </p>
             </div>
          </div>

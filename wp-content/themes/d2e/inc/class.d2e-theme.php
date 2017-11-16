@@ -36,7 +36,13 @@ class D2E_theme {
 			'top-right-menu' => __('Top Right Menu')
 		));
 	}
-
+	
+	public function get_options($option=''){
+		if(get_option( 'd2e_theme_data')){
+			$options = get_option( 'd2e_theme_data');
+		  return $options[$option];
+		}
+	}
 	
 
 	public function get_left_menu(){
@@ -63,12 +69,45 @@ class D2E_theme {
 		
 	}
 
-	public function get_options($option=''){
-		if( get_option( 'd2e_theme_data')){
-			$options = get_option( 'd2e_theme_data');
-		  return $options[$option];
+	public function get_slider(){
+		if($this->get_options('images_slide')){
+			$images_slide = $this->get_options('images_slide');
+			$first = '
+				<div id="carousel">
+            		<div id="owl-demo" class="owl-carousel owl-theme">
+			';
+
+			$last = '
+					</div>
+				</div>
+			';
+			$content = '';
+			foreach ($images_slide as $key => $item) {
+				$content .= sprintf('
+						<div class="item">
+		                  <img src="%s" alt="">      
+		                  <div class="carousel-text">
+		                     <div class="line">
+		                        <div class="s-12 l-9">
+		                           <h2>%s</h2>
+		                        </div>
+		                        <div class="s-12 l-9">
+		                           <p>%s</p>
+		                        </div>
+		                     </div>
+		                  </div>
+		               </div>
+					', $item['src'], $item['title'], $item['description']);
+			}
+			echo $res = $first . $content . $last ;
+			//return $res;
+		}else{
+			return '';
 		}
 	}
+
+
+	
 
 	
 }
