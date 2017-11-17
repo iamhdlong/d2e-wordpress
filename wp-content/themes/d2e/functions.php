@@ -1,4 +1,6 @@
 <?php
+use  D2e\Inc\D2e_theme;
+
 /**
  * @package WordPress
  * @subpackage D2E theme
@@ -13,8 +15,8 @@ define(THEME_URI, get_template_directory_uri());
 define(THEME_PATH, get_template_directory());
 
 //require get_parent_theme_file_path( '/inc/icon-functions.php' );
+require THEME_PATH .'/inc/autoload.php';
+// require THEME_PATH .'/inc/class.d2e-settings.php';
+// require THEME_PATH .'/inc/class.d2e-theme.php';
 
-require THEME_PATH .'/inc/class.d2e-settings.php';
-require THEME_PATH .'/inc/class.d2e-theme.php';
-
-$d2e_theme = new D2E_theme();
+$d2e_theme = new D2e_theme();

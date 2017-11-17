@@ -1,8 +1,11 @@
 <?php
+namespace D2e\Inc;
+
+use D2e\Inc\D2e_theme_core;
 /*
 Create settings in cms
 */
-class D2E_settings{
+class D2e_settings extends D2e_theme_core{
 	
 	protected $options;
 	protected $optionGroup = 'd2e_theme_group';
@@ -24,8 +27,12 @@ class D2E_settings{
 		add_action( 'admin_init', [$this, 'register_setting']);
 		add_action('admin_enqueue_scripts', [$this, 'add_theme_script_adm']);
 
+
 		add_action('init', function($optionName) {
-			add_filter('pre_update_option'.$optionName , [$this,'before_save_setting']);
+			
+				add_filter('pre_update_option'.$optionName , [$this,'before_save_setting']);	
+			
+			
 		});
 
 		wp_enqueue_media();
@@ -47,18 +54,15 @@ class D2E_settings{
 	}
 
 	public function before_save_setting($input){
-
-		if($input){
-			$new_data = $input;
-			if($input['images_slide']){
-				$new_images_slide = array_values($input['images_slide']);
-				$new_data['images_slide'] = $new_images_slide;
-			}
-			return $new_data;
+		if($_POST && $input){
+				$new_data = $input;
+				if($input['images_slide']){
+					$new_images_slide = array_values($input['images_slide']);
+					$new_data['images_slide'] = $new_images_slide;
+				}
+				return $new_data;
 		}
-		
 	}
-
 
 	public function add_theme_script_adm(){
 		wp_enqueue_style( 'bootstrap', '//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css');
@@ -71,8 +75,6 @@ class D2E_settings{
 
 	}
 
-	public function get_categories(){
 
-	}
 
 }

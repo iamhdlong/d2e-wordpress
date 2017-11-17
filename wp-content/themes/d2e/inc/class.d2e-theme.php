@@ -1,11 +1,17 @@
 <?php 
+namespace D2e\Inc;
 
-class D2E_theme {
+use D2e\Inc\D2e_settings;
+use D2e\Inc\D2e_theme_core;
+
+
+class D2e_theme extends D2e_theme_core{
 	
 
 	public function __construct(){
 		add_action( 'init', [$this,'init'] );
-		$themeSettingsObj = new D2E_settings();
+		$themeSettingsObj = new D2e_settings();
+
 	}	
 
 	public function init(){
