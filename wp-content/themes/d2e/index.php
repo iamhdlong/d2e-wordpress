@@ -11,32 +11,8 @@ get_header(); ?>
                <h2>Some awesome blocks</h2>
                <p class="subtitile">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
                </p>
-               <div class="margin">
-                  <div class="s-12 m-6 l-3 margin-bottom">
-                     <i class="icon-paperplane_ico icon2x"></i>
-                     <h3>About</h3>
-                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                     </p>
-                  </div>
-                  <div class="s-12 m-6 l-3 margin-bottom">
-                     <i class="icon-star icon2x"></i>
-                     <h3>Company</h3>
-                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                     </p>
-                  </div>
-                  <div class="s-12 m-6 l-3 margin-bottom">
-                     <i class="icon-message icon2x"></i>
-                     <h3>Services</h3>
-                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                     </p>
-                  </div>
-                  <div class="s-12 m-6 l-3 margin-bottom">
-                     <i class="icon-mail icon2x"></i>
-                     <h3>Contact</h3>
-                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                     </p>
-                  </div>
-               </div>
+               <?php $d2e_theme->get_special_services(); ?>
+               
             </div>
          </div>
          <!-- SECOND BLOCK --> 	

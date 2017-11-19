@@ -18,6 +18,25 @@
 			<input type="text" size="60" name="<?php echo $optionName ?>[footer_right]" value="<?php echo $options['footer_right'] ?>">
 		</div>
 
+		<div>
+			<label>Special serivce</label>
+			<select name="<?php echo $optionName ?>[special_serivce]">
+				<option>-- Choose special service --</option>
+				<?php 
+				foreach($key_value_categories as $cate): 
+					if($cate['key'] == $options['special_serivce']){
+						$select = 'selected';
+					}else{
+						$select = '';
+					}
+				?>
+
+					<option value="<?php echo $cate['key']; ?>" <?php echo $select; ?>><?php echo $cate['name'] ?></option>
+
+				<?php endforeach; ?>
+			</select>
+		</div>
+
 
 
 				

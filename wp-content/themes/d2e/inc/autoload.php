@@ -2,8 +2,7 @@
 spl_autoload_register( 'd2e_autoload' );
 
 function d2e_autoload($class_name){
-	// echo strpos($class_name, 'D2e_theme');
-
+	//echo $class_name .'--';
 
 	if(false === strpos($class_name, 'D2e')){ // thu muc dau tien
 		return ;
@@ -35,7 +34,7 @@ function d2e_autoload($class_name){
     		include_once( $file_path );
 	} else {
 		    wp_die(
-		        esc_html( "The file attempting (" .$file_path .") to be loaded at $filepath does not exist." )
+		        esc_html( "The file (" .$file_path .") to be loaded at does not exist." )
 		    );
 	}
 

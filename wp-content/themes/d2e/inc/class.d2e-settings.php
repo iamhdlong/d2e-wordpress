@@ -11,6 +11,7 @@ class D2e_settings extends D2e_theme_core{
 	protected $optionGroup = 'd2e_theme_group';
 	protected $optionName = 'd2e_theme_data';
 
+
 	public function __construct( $location, $name, $type ){
 		$optionName = $this->optionName;
 		$this->options = get_option($this->optionName);
@@ -29,20 +30,18 @@ class D2e_settings extends D2e_theme_core{
 
 
 		add_action('init', function($optionName) {
-			
-				add_filter('pre_update_option'.$optionName , [$this,'before_save_setting']);	
-			
-			
+			//add_filter('pre_update_option'.$optionName , [$this,'before_save_setting']);	
 		});
-
-		wp_enqueue_media();
 
 	}
 
 	public function create_page(){
+		wp_enqueue_media(); // import thư viện popup upload image
 		$optionGroup = $this->optionGroup;
 		$options = $this->options; 
 		$optionName = $this->optionName;
+		$key_value_categories = $this->get_key_value_cates();
+
 		require THEME_PATH."/inc/views/view-settings.php";
 	}
 
@@ -54,13 +53,9 @@ class D2e_settings extends D2e_theme_core{
 	}
 
 	public function before_save_setting($input){
-		if($_POST && $input){
-				$new_data = $input;
-				if($input['images_slide']){
-					$new_images_slide = array_values($input['images_slide']);
-					$new_data['images_slide'] = $new_images_slide;
-				}
-				return $new_data;
+		if($_POST){
+			
+				
 		}
 	}
 
