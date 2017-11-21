@@ -104,7 +104,6 @@ class D2e_theme_frontend extends D2e_theme_core{
 		if($query->have_posts()){
 			while ($query->have_posts()) {
 			$query->the_post();
-			//<i class="icon-paperplane_ico icon2x"></i>
 			$thum_url=wp_get_attachment_url( get_post_thumbnail_id(get_the_ID() ) );
 
 			$html_serive .= sprintf('
@@ -119,10 +118,34 @@ class D2e_theme_frontend extends D2e_theme_core{
 		}else{
 			return '';
 		}
-		
-		
 	}
 
+	public function get_gallery(){
+		if($this->get_options('images_gallery')){
+			$images_gallery = $this->get_options('images_gallery');
+			$first = '
+				<div class="margin">
+			';
+
+			$last = '
+				</div>
+			';
+			$content = '';
+			foreach ($images_gallery as $key => $item) {
+				$content .= sprintf('
+		                  <div class="s-12 m-6 l-3">
+		                     <img src="%s" alt="%s">
+		                     <p class="subtitile">%s
+                    		 </p>
+		                  </div>
+					', $item['src'], $item['title'], $item['description']);
+			}
+			echo $res = $first . $content . $last ;
+			//return $res;
+		}else{
+			return '';
+		}
+	}
 
 
 

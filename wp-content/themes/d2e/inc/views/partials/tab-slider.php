@@ -24,7 +24,7 @@ $total_images_slide = count($images_slide);
 				endif; ?>
 			</div>
 
-			<div style="text-align: center;margin:5px 0px;"><a href="javascript:;" onclick="d2eApp.add_item_slide(this)" total_images_slide="<?php echo $total_images_slide; ?>" class="button" id="add-slide-btn">Add</a></div>
+			<div style="text-align: center;margin:5px 0px;"><a href="javascript:;" onclick="d2eApp.add_item_slide(this, 'images_slide')" total_images_slide="<?php echo $total_images_slide; ?>" class="button" id="add-slide-btn">Add</a></div>
 
     	</div>
 </div>

@@ -60,13 +60,13 @@ class D2e_settings extends D2e_theme_core{
 	}
 
 	public function add_theme_script_adm(){
-		wp_enqueue_style( 'bootstrap', '//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css');
-		wp_enqueue_style( 'style', THEME_URI.'/inc/css/style.css' , false, filemtime(THEME_PATH . '/inc/css/style.css'));
+		wp_enqueue_style( 'bootstrap-css', '//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css');
+		wp_enqueue_style( 'style-css', THEME_URI.'/inc/css/style.css' , false, filemtime(THEME_PATH . '/inc/css/style.css'));
 		wp_enqueue_script( 'jquery-lib', THEME_URI.'/inc/js/jquery-1.8.3.min.js');
 		wp_enqueue_script( 'jquery-ui', THEME_URI.'/inc/js/jquery-ui.js');
-		wp_enqueue_script( 'common-js', THEME_URI.'/inc/js/common.js' , false, filemtime(THEME_PATH . '/inc/js/common.js'));
-		wp_enqueue_script( 'tab', THEME_URI.'/inc/js/tab.js' , false, filemtime(THEME_PATH . '/inc/js/tab.js'));
-		wp_enqueue_script( 'slide', THEME_URI.'/inc/js/slide.js' , false, filemtime(THEME_PATH . '/inc/js/slide.js'));
+		wp_enqueue_script( 'main-js', THEME_URI.'/inc/js/main.js' , false, filemtime(THEME_PATH . '/inc/js/main.js'));
+		wp_enqueue_script( 'tab-js', THEME_URI.'/inc/js/tab.js' , false, filemtime(THEME_PATH . '/inc/js/tab.js'));
+		wp_enqueue_script( 'slide-js', THEME_URI.'/inc/js/slide.js' , false, filemtime(THEME_PATH . '/inc/js/slide.js'));
 
 	}
 
