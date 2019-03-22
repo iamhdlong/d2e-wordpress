@@ -12,7 +12,7 @@ class D2e_settings extends D2e_theme_core{
 	protected $optionName = 'd2e_theme_data';
 
 
-	public function __construct( $location, $name, $type ){
+	public function __construct( ){
 		$optionName = $this->optionName;
 		$this->options = get_option($this->optionName);
 		add_action( 'admin_menu', function(){
